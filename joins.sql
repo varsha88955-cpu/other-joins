@@ -42,167 +42,192 @@ insert into employees values
 -- 4. Display all departments and their employees
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 5. Display employee names and department names
 select e.emp_name,d.dept_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 6. Display emp_id, emp_name and dept_name
 select e.emp_id,e.emp_name,d.dept_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
--- 7. Display all departments including those without employees
-select d.dept_id,d.dept_name,e.emp_name
+-- 7. Return all departments, including those without employees
+select d.dept_id,d.dept_name,e.emp_id,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 8. Display department name and employee salary
 select d.dept_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
--- 9. Display all departments and employees working in each department
+-- 9. Display all departments and the employees working in each department
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 10. Display dept_id, dept_name and emp_name
 select d.dept_id,d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 11. Display departments located in Hyderabad and their employees
 select d.dept_name,d.location,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where d.location='hyderabad';
+right join departments d
+on e.dept_id=d.dept_id
+and d.location='hyderabad';
 
 
 -- 12. Display all departments and employees whose salary is greater than 50000
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where e.salary>50000 or e.salary is null;
+right join departments d
+on e.dept_id=d.dept_id
+and e.salary>50000;
 
 
 -- 13. Display all departments and employees whose salary is between 30000 and 60000
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where e.salary between 30000 and 60000 or e.salary is null;
+right join departments d
+on e.dept_id=d.dept_id
+and e.salary between 30000 and 60000;
 
 
 -- 14. Display all departments and employee names in alphabetical order
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 order by e.emp_name;
 
 
 -- 15. Display all departments and employees sorted by department name
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 order by d.dept_name;
 
 
 -- 16. Display all departments where an employee exists
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 where e.emp_id is not null;
 
 
 -- 17. Display all departments including those without employees and sort employees by salary
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 order by e.salary;
 
 
--- 18. Display department name, employee name and salary
+-- 18. Display department name, employee name and salary for every department
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id;
+right join departments d
+on e.dept_id=d.dept_id;
 
 
 -- 19. Find departments that have no employees
 select d.dept_id,d.dept_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 where e.emp_id is null;
 
 
 -- 20. Display all departments and only employees whose names start with A
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where e.emp_name like 'a%' or e.emp_name is null;
+right join departments d
+on e.dept_id=d.dept_id
+and e.emp_name like 'a%';
 
 
 -- 21. Display all departments and employees earning more than 40000
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where e.salary>40000 or e.salary is null;
+right join departments d
+on e.dept_id=d.dept_id
+and e.salary>40000;
 
 
 -- 22. Display all departments in Hyderabad or Bangalore and their employees
 select d.dept_name,d.location,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where d.location in ('hyderabad','bangalore');
+right join departments d
+on e.dept_id=d.dept_id
+and d.location in ('hyderabad','bangalore');
 
 
 -- 23. Display department name and employee name where employee belongs to department
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 where e.dept_id is not null;
 
 
 -- 24. Display all departments and employees earning less than 50000
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
-where e.salary<50000 or e.salary is null;
+right join departments d
+on e.dept_id=d.dept_id
+and e.salary<50000;
 
 
 -- 25. Display all departments and employees in descending order of salary
 select d.dept_name,e.emp_name,e.salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 order by e.salary desc;
 
 
 -- 26. Display all departments and employee names sorted by employee name
 select d.dept_name,e.emp_name
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 order by e.emp_name;
 
 
 -- 27. Count employees in each department
 select d.dept_name,count(e.emp_id) as employee_count
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 group by d.dept_id,d.dept_name;
 
 
 -- 28. Average salary of employees in each department
 select d.dept_name,avg(e.salary) as average_salary
 from employees e
-right join departments d on e.dept_id=d.dept_id
+right join departments d
+on e.dept_id=d.dept_id
 group by d.dept_id,d.dept_name;
 
 
