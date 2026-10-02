@@ -19,7 +19,6 @@ insert into departments values
 (3,'finance','mumbai'),
 (4,'sales','delhi'),
 (5,'marketing','chennai'),
-(6,'operations','pune');
 
 
 -- INSERT EMPLOYEE DATA
@@ -29,13 +28,7 @@ insert into employees values
 (3,'rahul',72000,3),
 (4,'sneha',55000,4),
 (5,'kiran',45000,2),
-(6,'meena',38000,1),
-(7,'vikas',68000,4),
-(8,'ananya',75000,2),
-(9,'rohit',42000,3),
-(10,'divya',35000,1),
-(11,'akash',52000,2),
-(12,'neha',39000,null);
+(6,'neha',39000,null);
 
 
 -- RIGHT JOIN
