@@ -1,9 +1,15 @@
+drop table if exists employees;
+drop table if exists departments;
+
+use joins;
+
 -- CREATE TABLES
 create table departments (
     dept_id int primary key,
     dept_name varchar(100),
     location varchar(100)
 );
+
 create table employees (
     emp_id int primary key,
     emp_name varchar(100),
@@ -18,7 +24,7 @@ insert into departments values
 (2,'it','bangalore'),
 (3,'finance','mumbai'),
 (4,'sales','delhi'),
-(5,'marketing','chennai'),
+(5,'marketing','chennai');
 
 
 -- INSERT EMPLOYEE DATA
